@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>我的个人网站</title> 
+</head>
+<style>
+.aaa{
+color:#FFFFFF;
+background-color: #FD7031;
+width: 100px;
+height:50px;
+border-radius: 20px;
+text-align: center;
+}
+#bbb{
+color: #F29100;
+}
+li{
+	color:#fd311c;
+}
+</style>
+<body>
+
+<h2>Norwegian Mountain Trip</h2>
+<img border="0" src="/images/pulpit.jpg" alt="Pulpit rock" width="304" height="228">
+<ul>
+<li>列表1</li>
+<li>列表2</li>
+<li>列表3</li>
+<li>列表4</li>
+<li>列表5</li>
+</ul>
+<p class="aaa">我很菜 要努力学</p>
+<text id="bbb">加油加油</text>
+<table border="1">
+    <tr>
+        <td>row 1, cell 1</td>
+        <td>row 1, cell 2</td>
+    </tr>
+    <tr>
+        <td>row 2, cell 1</td>
+        <td>row 2, cell 2</td>
+    </tr>
+<div>
+<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+<button onclick="getLocation()">点我</button>
+</div>
+</table>
+
+</body>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+{
+	if (navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+	else
+	{
+		x.innerHTML="该浏览器不支持获取地理位置。";
+	}
+}
+
+function showPosition(position)
+{
+	x.innerHTML="纬度: " + position.coords.latitude + 
+	"<br>经度: " + position.coords.longitude;	
+}
+</script>
+</html>
